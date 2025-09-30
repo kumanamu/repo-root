@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   backend:
-    image: ${kuuma/myapp-backend:latest}
+    image: ${BACKEND_IMAGE}
     container_name: backend
     env_file:
       - .env.prod
@@ -13,7 +13,7 @@ services:
       - "8080:8080"
 
   frontend:
-    image: ${kuuma/myapp-frontend:latest}
+    image: ${FRONTEND_IMAGE}
     container_name: frontend
     depends_on:
       - backend
